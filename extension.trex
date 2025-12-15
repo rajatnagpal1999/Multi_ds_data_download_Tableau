@@ -1,33 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns="http://tableau.com/xml/extension_manifest" version="1.0">
+<manifest
+  xmlns="http://tableau.com/xml/extension_manifest"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://tableau.com/xml/extension_manifest extension_manifest.xsd"
+  version="1.0">
 
+  <extension
+    id="multi-ds-multiselect-filter"
+    name="Multi-DS Multi-Select Filter"
+    extension-version="1.0.0"
+    author="Rajat Nagpal">
 
-<extension
-id="multi-ds-multiselect-filter"
-name="Multi-DS Multi-Select Filter"
-extension-version="1.0.0"
-author="Rajat Nagpal">
+    <description>
+      Apply multi-select filters across worksheets using multiple data sources.
+    </description>
 
+    <min-supporting-version>2021.1</min-supporting-version>
 
-<description>
-Apply multi-select filters across worksheets using multiple data sources.
-</description>
+    <source-location>
+      <url>https://rajatnagpal1999.github.io/Multi_ds_data_download_Tableau/index.html</url>
+    </source-location>
 
+    <permissions>
+      <permission>full data</permission>
+    </permissions>
 
-<min-supporting-version>2021.1</min-supporting-version>
-
-
-<source-location>
-<url>
-https://rajatnagpal1999.github.io/Multi_ds_data_download_Tableau/index.html
-</url>
-</source-location>
-
-
-<permissions>
-<permission>full data</permission>
-</permissions>
-
-
-</extension>
+  </extension>
 </manifest>

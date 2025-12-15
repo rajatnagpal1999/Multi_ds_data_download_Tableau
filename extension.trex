@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns="http://tableau.com/xml/extension_manifest" version="1.0">
 
@@ -19,7 +18,6 @@ Apply multi-select filters across worksheets using multiple data sources.
 
 
 <source-location>
-<!-- Update this AFTER enabling GitHub Pages -->
 <url>
 https://rajatnagpal1999.github.io/Multi_ds_data_download_Tableau/index.html
 </url>

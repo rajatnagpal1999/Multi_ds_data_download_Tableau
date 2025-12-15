@@ -1,0 +1,40 @@
+<!-- index.html -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script src="https://cdn.jsdelivr.net/npm/@tableau/extensions-api@1.10.0/lib/tableau.extensions.1.10.0.min.js"></script>
+<script src="script.js"></script>
+<title>Multi-Select Multi-Field Filter</title>
+<style>
+body { font-family: sans-serif; padding: 20px; }
+label { display: block; margin-bottom: 8px; }
+select { width: 250px; height: 100px; }
+</style>
+</head>
+<body>
+<h2>Multi-Source Multi-Field Multi-Select Filter</h2>
+
+<!--Update filter label here-->
+
+<label>Select Category:
+<select id="categorySelect" multiple></select>
+</label>
+
+
+<label>Select Region:
+<select id="regionSelect" multiple></select>
+</label>
+
+
+<label>Select Segment:
+<select id="segmentSelect" multiple></select>
+</label>
+
+
+<button id="applyBtn">Apply Filters</button>
+</body>
+</html>
+

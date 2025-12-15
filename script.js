@@ -1,5 +1,12 @@
-
 let worksheets = [];
+
+
+//field names as present in data sources
+const FILTER_FIELDS = [
+{ fieldName: 'resp_region_grouped', label: 'Region', elementId: 'regionSelect' },
+{ fieldName: 'resp_sampling_phase', label: 'Phase', elementId: 'phaseSelect' },
+{ fieldName: 'resp_personal_income', label: 'Personal Income', elementId: 'incomeSelect' }
+];
 
 
 async function initializeExtension() {
@@ -15,9 +22,9 @@ const firstWorksheet = worksheets[0];
 const summaryData = await firstWorksheet.getSummaryDataAsync();
 
 
-populateDropdown(summaryData, 'Category', 'categorySelect');
-populateDropdown(summaryData, 'Region', 'regionSelect');
-populateDropdown(summaryData, 'Segment', 'segmentSelect');
+FILTER_FIELDS.forEach(f => {
+populateDropdown(summaryData, f.fieldName, f.elementId);
+});
 
 
 document
@@ -62,27 +69,21 @@ document.getElementById(elementId).selectedOptions
 
 
 async function applyFilters() {
-const filters = [
-{ field: 'Category', values: getSelectedValues('categorySelect') },
-{ field: 'Region', values: getSelectedValues('regionSelect') },
-{ field: 'Segment', values: getSelectedValues('segmentSelect') }
-];
-
-
 for (const worksheet of worksheets) {
-for (const filter of filters) {
-if (filter.values.length === 0) continue;
+for (const filter of FILTER_FIELDS) {
+const values = getSelectedValues(filter.elementId);
+if (values.length === 0) continue;
 
 
 try {
 await worksheet.applyFilterAsync(
-filter.field,
-filter.values,
+filter.fieldName,
+values,
 tableau.FilterUpdateType.REPLACE
 );
 } catch (err) {
 console.warn(
-`Failed filtering ${filter.field} on ${worksheet.name}`,
+`Failed filtering ${filter.fieldName} on ${worksheet.name}`,
 err
 );
 }
@@ -91,5 +92,4 @@ err
 }
 
 
-// Initialize extension
 document.addEventListener('DOMContentLoaded', initializeExtension);

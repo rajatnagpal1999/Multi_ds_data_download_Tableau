@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-  xmlns="http://tableau.com/xml/extension_manifest"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://tableau.com/xml/extension_manifest extension_manifest.xsd"
-  version="1.0">
+<manifest xmlns="http://tableau.com/xml/extension_manifest" version="1.0">
 
   <extension
     id="multi-ds-multiselect-filter"
